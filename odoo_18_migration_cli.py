@@ -126,12 +126,21 @@ def migrate_app_settings_blocks(path):
         updated = re.sub(r'<div class=\"row.*?o_settings_container\">\s*<label[^>]*for=\"(.*?)\".*?</div>', '', updated, flags=re.DOTALL)
         updated = re.sub(r'<div class=\"row.*?o_settings_container[^>]*>\s*<field[^>]*name=\"(.*?)\"[^>]*/>\s*</div>',
                          r'<setting string="\1"><field name="\1"/></setting>', updated)
-        updated = re.sub(r'</div>', '</block>', updated)
+        # Close the block and app containers separately
+        updated = re.sub(r'</div>\s*(?=</div>)', '</block>', updated)
         updated = re.sub(r'</div>', '</app>', updated)
+
         if updated != content:
-            with open(file, "w", encoding="utf-8") as f:
-                f.write(updated)
-            print(f"[SETTINGS MODIFIÉ] {file}")
+            block_open = len(re.findall(r'<block\b', updated))
+            block_close = len(re.findall(r'</block>', updated))
+            app_open = len(re.findall(r'<app>', updated))
+            app_close = len(re.findall(r'</app>', updated))
+            if block_open == block_close and app_open == app_close:
+                with open(file, "w", encoding="utf-8") as f:
+                    f.write(updated)
+                print(f"[SETTINGS MODIFIÉ] {file}")
+            else:
+                print(f"[BALISE NON FERMEÉ] {file}")
 
 # ------------------- PYTHON: STATES SUPPRESSION -------------------
 def migrate_python_field_states(path):
