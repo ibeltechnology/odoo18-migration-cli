@@ -25,7 +25,7 @@ CLI tool to automate the migration of Odoo 17 modules to version 18.0. This scri
 No installation required. Run the script using Python 3:
 
 ```bash
-python3 odoo18_migration_cli.py /path/to/your/module --auto-replace
+python3 odoo_18_migration_cli.py /path/to/your/module --auto-replace
 ```
 
 ### ⚙️ Options
@@ -38,7 +38,7 @@ python3 odoo18_migration_cli.py /path/to/your/module --auto-replace
 
 ```
 odoo18-migration-cli/
-├── odoo18_migration_cli.py       # Main script
+├── odoo_18_migration_cli.py       # Main script
 ├── README.md                     # Instructions
 ├── LICENSE                       # MIT License
 ├── examples/                     # Before/after samples (optional)
