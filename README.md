@@ -1,6 +1,6 @@
 # 🛠️ Odoo 18 Migration CLI
 
-CLI tool to automate the migration of Odoo modules to version 18.0. This script converts outdated XML and Python syntax to the latest Odoo 18 standards.
+CLI tool to automate the migration of Odoo 17 modules to version 18.0. This script converts outdated XML and Python syntax to the latest Odoo 18 standards.
 
 ## ✅ Supported Features
 
