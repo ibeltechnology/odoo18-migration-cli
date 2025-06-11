@@ -38,13 +38,14 @@ python3 odoo_18_migration_cli.py /path/to/your/module --auto-replace
 
 ```
 odoo18-migration-cli/
-├── odoo_18_migration_cli.py       # Main script
-├── README.md                     # Instructions
-├── LICENSE                       # MIT License
-├── examples/                     # Before/after samples (optional)
-└── docs/
-    └── guide_migration_odoo18.md  # Detailed migration guide
+├── odoo_18_migration_cli.py  # Main script
+├── README.md                # Instructions
+└── LICENSE                  # MIT License
 ```
+
+The repository currently contains only the CLI script and this README. Example
+and documentation directories may be added later to provide sample migrations
+and detailed guides.
 
 ---
 
@@ -64,5 +65,5 @@ Report bugs or suggest features via [Issues](https://github.com/your-user/odoo18
 
 ## 📘 Reference: Odoo 18 Migration Guide
 
-See docs/guide\_migration\_odoo18.md for a full summary of syntax updates in Odoo 18.
+Detailed documentation will be provided in a future `docs/` directory.
 
